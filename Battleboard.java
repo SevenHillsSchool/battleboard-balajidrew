@@ -16,22 +16,19 @@ public class Battleboard {
     public void placeBoats(int row, int col)
     {
       boats[row][col] = 4;
-      /*
-      boats[1][1] = 4;
-      boats[1][2] = 4;
-      boats[1][3] = 4;
-      boats[1][4] = 4;
-      boats[3][1] = 4;
-      boats[4][1] = 4;
-      boats[5][1] = 4;
-      */
+
     }
     public void guessShip(int gr, int gc)
     {
       if (boats[gr][gc] == 4)
       {
         System.out.println("Hit!");
-        boats[gc][gr] = 1;
+        guess[gc][gr] = 2;
+      }
+      else if (boats[gr][gc] == 0)
+      {
+        System.out.println("Miss!");
+        guess[gr][gc] = 1;
       }
     }
     //print boards
@@ -41,7 +38,7 @@ public class Battleboard {
       System.out.println("\n  A B C D E F G H");
       for (int x = 0; x < 8; x++)
       {
-        System.out.print(x+1);
+        System.out.print(x);
         for (int y = 0; y < 8; y++)
         {
           System.out.print(" " + boats[x][y]);
@@ -53,18 +50,19 @@ public class Battleboard {
 
     public void printGuess()
     {
-      System.out.println("\n\n\n");
+      System.out.println("\n\n");
       System.out.println("\nPrinting guessing board");
       System.out.println("\n  A B C D E F G H");
       for (int x = 0; x < 8; x++)
       {
-        System.out.print(x+1);
+        System.out.print(x);
         for (int y = 0; y < 8; y++)
         {
           System.out.print(" " + guess[x][y]);
         }
         System.out.println("");
       }//close x
+      System.out.println("\n");
     } // close printGuess
 
 }
