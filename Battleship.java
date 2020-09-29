@@ -89,13 +89,15 @@ public class Battleship
       b1.placeBoats(4,1);
       */
       b1.printShips();
-      //System.out.println("Welcome to the game. Here is your board");
-      b1.guessShip(2,3);
-      b1.guessShip(2,1);
-      b1.printGuess();
-      //GamePlay game = new GamePlay();
-      //guess[2][2] = 1;
-      //b1.guessShip();
+      for (int a = 0; a < 20; a++)
+      {
+        System.out.print("Input row of guess: ");
+        int gr = scan.nextInt();
+        System.out.print("Input column of guess: ");
+        int gc = scan.nextInt();
+        b1.guessShip(gr, gc);
+        b1.printGuess();
+      }
 
   }
 }
